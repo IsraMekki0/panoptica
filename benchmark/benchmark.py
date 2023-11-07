@@ -1,11 +1,11 @@
-import numpy as np
 import timeit
+from typing import Tuple, Union
+
+import cc3d
+import numpy as np
 
 # scipy needs to be installed to run this benchmark, we use cc3d as it is quicker for 3D data
 from scipy import ndimage
-
-import cc3d
-from typing import Tuple, Union
 
 
 def generate_random_binary_mask(size: Tuple[int, int, Union[int, None]]) -> np.ndarray:
@@ -97,6 +97,7 @@ if __name__ == "__main__":
         (100, 100, 100),  # 3D volume
         (200, 200, 200),  # 3D volume
         (512, 512, 512),  # 3D volume
+        (1024, 1024, 1024),  # 3D volume
     ]
 
     run_benchmarks(volume_sizes)
